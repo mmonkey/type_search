@@ -1,0 +1,63 @@
+// Variables
+
+// Search Overlay
+$search-overlay-background: rgba(0, 0, 0, 0.5);
+
+// Search Input
+$search-bar-width: 200px;
+$search-bar-color: #ffffff;
+$search-text-align: center;
+$search-icon-path: "../img/search_icon.png";
+
+.search_box {
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	display: block;
+	height: 50px;
+	width: 100%;
+	cursor: auto;
+}
+.search_overlay {
+	content: "";
+	background: $search-overlay-background;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 5000;
+	opacity: 0;
+	cursor: pointer;
+	visibility: hidden;
+	@include transition(opacity .5s ease);
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+#search {
+	background: transparent;
+	width: $search-bar-width;
+	border: none;
+	border-bottom: 2px solid $search-bar-color;
+	color: $search-bar-color;
+	box-shadow: none;
+	font-size: 24px;
+	line-height: 30px;
+	outline: none;
+	text-align: $search-text-align;
+}
+.search_icon {
+	text-indent: -9999px;
+	background: transparent url($search-icon-path) no-repeat center center;
+	border: none;
+	box-shadow: none;
+	outline: none;
+	height: 24px;
+	width: 24px;
+	margin-right: 16px;
+	cursor: pointer;
+}
